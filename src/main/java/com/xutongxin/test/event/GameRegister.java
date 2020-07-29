@@ -27,7 +27,7 @@ public class GameRegister {
      * @param item
      */
     public static void RegistryItem(Item item){
-        REG_ITEMS.put(item.getRegistryName().toString(),item);
+        REG_ITEMS.put(item.getRegistryName().getPath(),item);
     }
 
     /**
@@ -36,7 +36,7 @@ public class GameRegister {
      */
     public static void RegistryItems(Item ... items){
         for (Item item : items) {
-            REG_ITEMS.put(item.getRegistryName().toString(),item);
+            REG_ITEMS.put(item.getRegistryName().getPath(),item);
         }
     }
 
@@ -45,7 +45,7 @@ public class GameRegister {
      * @param collection
      */
     public static void RegistryItems(Collection<Item> collection){
-        collection.forEach(item -> REG_ITEMS.put(item.getRegistryName().toString(),item));
+        collection.forEach(item -> REG_ITEMS.put(item.getRegistryName().getPath(),item));
     }
 
     /**
@@ -53,7 +53,7 @@ public class GameRegister {
      * @param block
      */
     public static void RegistryBlock(Block block){
-        REG_BLOCKS.put(block.getRegistryName().toString(),block);
+        REG_BLOCKS.put(block.getRegistryName().getPath(),block);
     }
 
     /**
@@ -62,7 +62,7 @@ public class GameRegister {
      */
     public static void RegistryBlocks(Block ... blocks){
         for (Block block : blocks) {
-            REG_BLOCKS.put(block.getRegistryName().toString(),block);
+            REG_BLOCKS.put(block.getRegistryName().getPath(),block);
         }
     }
 
@@ -71,7 +71,7 @@ public class GameRegister {
      * @param collection
      */
     public static void RegistryBlocks(Collection<Block> collection){
-        collection.forEach(item -> REG_BLOCKS.put(item.getRegistryName().toString(),item));
+        collection.forEach(item -> REG_BLOCKS.put(item.getRegistryName().getPath(),item));
     }
 
     @SubscribeEvent
