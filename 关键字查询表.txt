@@ -1,2 +1,4 @@
 static 静态
 final 不变量
+void 代表的意思是什么也不返回
+this与super（没有self的）https://www.cnblogs.com/hasse/p/5023392.html
