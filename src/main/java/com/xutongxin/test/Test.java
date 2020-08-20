@@ -1,6 +1,11 @@
 package com.xutongxin.test;
 
+import com.github.dawnflyc.processtree.Tree;
+import com.xutongxin.test.event.GameRegister;
+import com.xutongxin.test.item.Test1Item;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.event.ColorHandlerEvent;
@@ -12,71 +17,26 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.*;
 
 @Mod("test")
 public class Test {
-    public static final String MOD_ID="test";
+    public static final String MOD_ID = "test";
 
-}
-Itemgroup.MSIC
 
-@Mod.EventBusSubscriber(bus=Mod.EventBusSubscriber.Bus.MOD)
-public class ModRegistry {
-
-    private static final Logger LOGGER = LogManager.getLogger();
-
-    /**
-     * Mod注册表，调用方法将对象put进来，游戏注册事件遍历调用
-     */
-    private static final Map<String, Item> REG_ITEMS=new HashMap<>();
-
-    public ModRegistry() {
-
-    }
-
-    /**
-     * 注册物品
-     * @param item
-     */
-    public static void itemRegister(Item item){
-        REG_ITEMS.put(item.getRegistryName().getPath(),item);
-    }
-    /**
-     * 注册物品
-     * @param item
-     * @param registryName
-     */
-    public static void itemRegister(Item item,String registryName){
-        item.setRegistryName(Test.MOD_ID,registryName);
-        REG_ITEMS.put(item.getRegistryName().getPath(),item);
-    }
-
-    /**
-     * 注册事件，改注册类型，需要改参数泛型
-     * @param itemRegistryEvent
-     */
-    @SubscribeEvent
-    public static void onItemsRegistry(final RegistryEvent.Register<Item> itemRegistryEvent) {
-        for (Item value : REG_ITEMS.values()) {
-            itemRegistryEvent.getRegistry().register(value);
-            LOGGER.info("注册物品:"+value.getRegistryName().getPath()+"成功！");
+    public Test() {
+        Tree tree = new Tree("com.xutongxin.test");
+        tree.run();
+        //添加了五种随机饱食度的食物
+        Random random = new Random();
+        String[] strs = {"cu", "iron", "cd", "d", "e"};
+        for (String str : strs) {
+            GameRegister.RegistryItem(new Test1Item(str, random.nextInt(10)));
         }
-    }
 
-    @SubscribeEvent
-    @OnlyIn(Dist.CLIENT)
-    public static void itemColors(ColorHandlerEvent.Item event) {
-        event.getItemColors().register(new ModItemColor(), ItemModelItem.ITEM);
     }
-
 
 
 }
-
-
-
-
-
-
 
 
