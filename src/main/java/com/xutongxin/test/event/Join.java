@@ -15,7 +15,8 @@ public class Join {
         {
             String message="Hello world";
             StringTextComponent text=new StringTextComponent(message);
-            entity.sendMessage(text);
+            entity.sendMessage(text,entity.getUniqueID());
+            System.out.println(123);
 
         }
     }
