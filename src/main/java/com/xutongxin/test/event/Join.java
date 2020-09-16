@@ -1,12 +1,18 @@
 package com.xutongxin.test.event;
 
+import com.sun.media.jfxmedia.logging.Logger;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod;
+import org.apache.logging.log4j.LogManager;
 
+@Mod.EventBusSubscriber
 public class Join {
+    private static final org.apache.logging.log4j.Logger LOGGER = LogManager.getLogger();
+
     @SubscribeEvent
     public static void onPlayerJoin(EntityJoinWorldEvent event)
     {
@@ -16,7 +22,7 @@ public class Join {
             String message="Hello world";
             StringTextComponent text=new StringTextComponent(message);
             entity.sendMessage(text,entity.getUniqueID());
-            System.out.println(123);
+            LOGGER.info(entity.getUniqueID()+"玩家加入游戏");
 
         }
     }
