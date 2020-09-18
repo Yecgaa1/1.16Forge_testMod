@@ -18,6 +18,7 @@ import org.apache.logging.log4j.Logger;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.*;
+import com.xutongxin.test.block.TestBlock;
 
 @Mod("test")
 public class Test {
@@ -33,6 +34,7 @@ public class Test {
         for (String str : strs) {
             GameRegister.RegistryItem(new Test1Item(str, random.nextInt(10)));
         }
+        GameRegister.RegistryBlock(new TestBlock("hello"));
 
     }
 

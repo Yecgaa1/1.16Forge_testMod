@@ -4,10 +4,10 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
 
-public class TesrBlock extends Block {
+public class TestBlock extends Block {
 
-    public TesrBlock() {
+    public TestBlock(String name) {
         super(Properties.create(Material.ANVIL));
-        this.setRegistryName("testblock");
+        this.setRegistryName(name);
     }
 }
