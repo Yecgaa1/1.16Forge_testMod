@@ -34,7 +34,7 @@ public class Test {
         for (String str : strs) {
             GameRegister.RegistryItem(new Test1Item(str, random.nextInt(10)));
         }
-        GameRegister.RegistryBlock(new TestBlock("hello"));
+        //GameRegister.RegistryBlock(new TestBlock("hello"));
 
     }
 

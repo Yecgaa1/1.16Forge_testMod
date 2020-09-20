@@ -10,4 +10,11 @@ public class TestBlock extends Block {
         super(Properties.create(Material.ANVIL));
         this.setRegistryName(name);
     }
+
+    /**
+     * 自动注册构造
+     */
+    public TestBlock() {
+        this("test");
+    }
 }

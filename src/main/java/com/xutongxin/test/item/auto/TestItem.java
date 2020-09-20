@@ -1,12 +1,12 @@
 package com.xutongxin.test.item.auto;
 
 import net.minecraft.item.Item;
-import com.xutongxin.test.xtxgroup;
+import com.xutongxin.test.XTXGroup;
 
 public class TestItem extends Item {
 
     public TestItem() {
-        super(new Properties().group(xtxgroup.Modgroup.itemGroup));
+        super(new Properties().group(XTXGroup.Modgroup.itemGroup));
         this.setRegistryName("helloworld");
     }
 }

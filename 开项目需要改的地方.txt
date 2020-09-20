@@ -1,0 +1,28 @@
+build.gradle:
+     version = '1.0'
+     group = 'com.yourname.modid' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+     archivesBaseName = 'modid'
+
+     所有的modid 、examplemod 基本上都可以替换成你真正的modid
+     反正多找找，都改了
+
+     group 大概就是包名 比如:com.xutongxin.test
+mod.toml里面也需要改，我看到你改了。  //“妹妹真棒啊” 这是什么鬼。
+mod.toml 删掉这个东西 updateJSONURL="http://myurl.me/"
+
+编码问题:
+     ide: 编辑器-文件编码 里面的三个都改成utf-8
+     build.gradle:
+          加上这个
+          tasks.withType(JavaCompile) {
+              options.encoding = "UTF-8"
+          }
+
+
+
+
+
+
+
+
+

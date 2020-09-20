@@ -2,12 +2,11 @@ package com.xutongxin.test;
 
 import com.xutongxin.test.event.GameRegister;
 import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
-public class xtxgroup extends ItemGroup
+public class XTXGroup extends ItemGroup
 {
 
-    public xtxgroup()
+    public XTXGroup()
     {
         super("xtx_group");
         this.setBackgroundImageName("image.png");
@@ -16,9 +15,10 @@ public class xtxgroup extends ItemGroup
     public ItemStack createIcon() {
         return new ItemStack(GameRegister.REG_ITEMS.get("iron"));
     }
+
     public static class Modgroup
     {
-        public static ItemGroup itemGroup=new xtxgroup();
+        public static ItemGroup itemGroup=new XTXGroup();
 
     }
 
